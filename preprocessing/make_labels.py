@@ -89,7 +89,7 @@ def save_train_labels(misc_dir, train_label_name):
                                            'shuffled_train_filenames.npy'))
     final_labels = []
     for train_filename in train_filenames:
-        key = train_filename.split('/')[-1]
+        key = train_filename.split('\\')[-1]
         final_labels.append(label_dict[key])
 
     np.save(train_label_name, final_labels)
@@ -121,6 +121,6 @@ if __name__ == '__main__':
     save_val_labels(misc_dir, val_label_name)
     save_train_labels(misc_dir, train_label_name)
 
-    num_div = 2
+    num_div = 1
     div_labels(train_label_name, orig_batch_size, num_div)
     div_labels(val_label_name, orig_batch_size, num_div)

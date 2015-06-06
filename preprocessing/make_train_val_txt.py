@@ -23,12 +23,12 @@ traintxt_filename = os.path.join(misc_dir, 'train.txt')
 sorted_train_dirs = sorted([name for name in os.listdir(train_img_dir)
                             if os.path.isdir(os.path.join(train_img_dir, name))])
 
-synsets = scipy.io.loadmat(meta_clsloc_mat)['synsets'][0]
+synsets = scipy.io.loadmat(meta_clsloc_mat)['synsets']
 
 
-synsets_wnid = [str(synset[1][0]) for synset in synsets]
+synsets_wnid = [str(synset[0][1][0]) for synset in synsets]
 dict_wnid_to_origid = {
-    str(synset[1][0]): int(synset[0][0]) for synset in synsets}
+    str(synset[0][1][0]): int(synset[0][0][0]) for synset in synsets}
 
 # extract actual image correspondence
 dict_train_id = {wnid: dict_wnid_to_origid[wnid] for wnid in sorted_train_dirs}

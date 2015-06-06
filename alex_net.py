@@ -23,7 +23,7 @@ class AlexNet(object):
         # allocate symbolic variables for the data
         # 'rand' is a random array used for random cropping/mirroring of data
         x = T.ftensor4('x')
-        y = T.lvector('y')
+        y = T.ivector('y')
         rand = T.fvector('rand')
 
         print '... building the model'
