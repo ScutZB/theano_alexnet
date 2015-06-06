@@ -2,3 +2,4 @@ test_*
 *.pyc
 models/
 *.html
+compile_result/
