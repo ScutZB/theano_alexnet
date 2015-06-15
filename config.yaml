@@ -1,7 +1,7 @@
 # If want to input None, use !!null
 
 # Resume Training, start from scratch or resume training
-resume_train: False
+resume_train: True
 load_epoch: 20
 
 # Learning Parameters
